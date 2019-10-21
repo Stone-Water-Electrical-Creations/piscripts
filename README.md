@@ -1,7 +1,7 @@
 
-st of these scripts are just litttle things Ive built to help something I had going on.
+Most of these scripts are just little things Ive built to help something I had going on.
 
-the ones that are in crontav are:
+the ones that are in crontab are:
 
 Stop_Seeders.sh #  
 This is used to turn off completed transmission downloads if it finds any
