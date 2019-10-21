@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Author: Put any name here :P
+# Author: Put any name here :)
 import os
 from time import sleep
 import signal
