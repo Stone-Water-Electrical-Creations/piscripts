@@ -7,7 +7,7 @@ do
     dir=`echo "$line" | cut -d"-" -f1`
   echo   mv "$line" "$dir" 
     done
-  #else
-    #echo "$dir: no files to move"
+  else
+    echo "$dir: no files to move"
   fi
 done
