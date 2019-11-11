@@ -15,16 +15,14 @@ cd $sourceDir
 touch rm.tmp 
 find .  -maxdepth 1 -type f | egrep -v '.fuse|rm.tmp' | while read filename
 do 
-set -xv
     dir=`echo $filename|awk -F\- '{print $1}'`
     dir=`echo $dir |sed -e 's/ The//g' | sed -e 's/ /\\ /g' | sed -e 's/.\///g' |sed -e 's/ ^//g'`
     ls "$dir" &>/dev/null
     if [ $? = 2 ] ; then
         echo "$dir"
-        echo mkdir "$dir">> rm.tmp
+        echo mkdir `echo $dir|sed -e 's/ /\\\ /g'`>> rm.tmp
     fi
     echo mv `echo $filename|sed -e 's/ /\\\ /g'` `echo $dir|sed -e 's/ /\\\ /g'`>> rm.tmp 
-    set +xv
 done 
 if [ "$2" = "debug" ] ; then
    more rm.tmp
